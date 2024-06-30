@@ -1,14 +1,15 @@
 import {
-  Home,
-  Feather,
-  Twitter,
-  GitHub,
-  Figma,
-  CheckSquare,
-  Mic,
+  Book,
   Briefcase,
+  CheckSquare,
+  Feather,
+  Figma,
+  GitHub,
+  Home,
   Layers,
+  Mic,
   Package,
+  Twitter,
 } from "react-feather";
 
 const config = {
@@ -40,6 +41,11 @@ const config = {
       icon: Layers,
       title: "Stack",
       href: "/stack",
+    },
+    {
+      icon: Book,
+      title: "Proof of Work",
+      href: "/pow",
     },
 
     {

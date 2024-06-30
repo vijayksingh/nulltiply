@@ -1,16 +1,18 @@
-import React from "react";
-import NextLink from "next/link";
-import { MDXRemoteProps, compileMDX } from "next-mdx-remote/rsc";
 import type { MDXComponents } from "mdx/types";
-import { View, Text, Link, Divider, Image } from "reshaped";
-import ArticleHeading from "../../components/ArticleHeading";
-import ArticleCode from "../../components/ArticleCode";
-import ArticleBio from "../../components/ArticleBio";
+import { MDXRemoteProps, compileMDX } from "next-mdx-remote/rsc";
+import NextLink from "next/link";
+import React from "react";
+import { Divider, Image, Link, Text } from "reshaped";
 import Article from "../../components/Article";
+import ArticleBio from "../../components/ArticleBio";
+import ArticleCode from "../../components/ArticleCode";
+import ArticleHeading from "../../components/ArticleHeading";
+import LearningTimeline from "../LearningTimeline/LearningTimeline";
 import s from "./MdxContent.module.css";
 
 const components: MDXComponents = {
   Bio: ArticleBio,
+  LearningTimeline: LearningTimeline,
   strong: ({ children }) => {
     return (
       <Text as="b" color="neutral">
