@@ -8,11 +8,13 @@ import ArticleBio from "../../components/ArticleBio";
 import ArticleCode from "../../components/ArticleCode";
 import ArticleHeading from "../../components/ArticleHeading";
 import LearningTimeline from "../LearningTimeline/LearningTimeline";
+import TIL from "../TIL/TIL";
 import s from "./MdxContent.module.css";
 
 const components: MDXComponents = {
   Bio: ArticleBio,
   LearningTimeline: LearningTimeline,
+  TIL: TIL,
   strong: ({ children }) => {
     return (
       <Text as="b" color="neutral">

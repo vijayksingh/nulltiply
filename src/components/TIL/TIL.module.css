@@ -1,0 +1,53 @@
+.timeline {
+  position: relative;
+  padding-left: var(--rs-unit-x8);
+  margin-left: var(--rs-unit-x4);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--rs-color-border-neutral-faded);
+}
+
+.monthSeparator {
+  margin-top: var(--rs-unit-x6);
+  margin-bottom: var(--rs-unit-x4);
+  color: var(--rs-color-foreground-neutral-faded);
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: var(--rs-unit-x6);
+}
+
+.timelineItem::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--rs-unit-x8) * -1.15);
+  top: var(--rs-unit-x8);
+  width: var(--rs-unit-x2);
+  height: var(--rs-unit-x2);
+  border-radius: 50%;
+  background-color: var(--rs-color-background-primary);
+  border: 2px solid var(--rs-color-border-primary);
+}
+
+.date {
+  position: absolute;
+  left: calc(var(--rs-unit-x8) * -1.75 - var(--rs-unit-x10));
+  top: var(--rs-unit-x7);
+  width: var(--rs-unit-x16);
+  text-align: left;
+}
+
+.content {
+  background-color: var(--rs-color-background-elevation-raised);
+  border-radius: var(--rs-unit-radius-medium);
+  padding: var(--rs-unit-x4);
+  margin-left: var(--rs-unit-x4);
+}

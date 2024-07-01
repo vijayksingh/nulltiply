@@ -2,6 +2,7 @@ import {
   Book,
   Briefcase,
   CheckSquare,
+  Edit3,
   Feather,
   GitHub,
   Home,
@@ -47,6 +48,11 @@ const config = {
       icon: Book,
       title: "Proof of Work",
       href: "/pow",
+    },
+    {
+      icon: Edit3,
+      title: "Today I Learned",
+      href: "/til",
     },
 
     {

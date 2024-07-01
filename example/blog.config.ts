@@ -1,14 +1,14 @@
 import {
-  Home,
-  Feather,
-  Twitter,
-  GitHub,
-  Figma,
-  CheckSquare,
-  Mic,
   Briefcase,
+  CheckSquare,
+  Feather,
+  Figma,
+  GitHub,
+  Home,
   Layers,
+  Mic,
   Package,
+  Twitter,
 } from "react-feather";
 
 const config = {
