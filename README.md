@@ -4,6 +4,25 @@
 - [ ] Enable Responsive mode for Stack page
 - [ ] Enable response mode for Learning page
 - [ ] Update configuration
+- [ ] Refactor TIL page to take posts from a TIL directory and convert it into TIL Group Interface and render them
+- [ ] Clicking on each TIL entry should move it to a individual post.
+- [ ] Apply the same pattern to Proof of work page also. 
+- [ ] Refactor Proof of Work component into Projects.
+
+
+## Component
+- Implement Retro Grid Component
+- Different Components for TIL
+  - Lessons
+  - Projects
+  - TIL
+  - Lecture
+  - Book
+
+
+## Posts
+- Add post about how to implement TIL component.
+- 
 
 
 
@@ -26,6 +45,7 @@ https://til.bhupesh.me/#aws
 - add confetti if user finishes reading the post
 
 - add retro grid on the top of home page
+
 
 
 
