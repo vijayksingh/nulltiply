@@ -3,13 +3,14 @@ import {
   Briefcase,
   CheckSquare,
   Feather,
-  Figma,
   GitHub,
   Home,
   Layers,
+  Linkedin,
   Mic,
   Package,
   Twitter,
+  Youtube,
 } from "react-feather";
 
 const config = {
@@ -79,17 +80,22 @@ const config = {
         {
           icon: Twitter,
           title: "Twitter",
-          href: "https://twitter.com/blvdmitry",
+          href: "https://twitter.com/dprophecyguy",
         },
         {
           icon: GitHub,
           title: "GitHub",
-          href: "https://github.com/formaat-design",
+          href: "https://github.com/dprophecyguy",
         },
         {
-          icon: Figma,
-          title: "Figma",
-          href: "https://www.figma.com/@reshaped",
+          icon: Linkedin,
+          title: "LinkedIn",
+          href: "https://www.linkedin.com/in/iamvijaysingh/",
+        },
+        {
+          icon: Youtube,
+          title: "Youtube",
+          href: "https://www.youtube.com/@dprophecyguy",
         },
       ],
     },

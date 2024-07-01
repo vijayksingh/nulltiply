@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { View, Hidden } from "reshaped";
+import { Hidden, View } from "reshaped";
 import App from "../components/App";
+import LayoutContent from "../components/LayoutContent";
 import LayoutMenu from "../components/LayoutMenu";
 import LayoutSubmenu from "../components/LayoutSubmenu";
-import LayoutContent from "../components/LayoutContent";
-import { getArticlesList } from "../utilities/articles.server";
 import config from "../config";
+import { getArticlesList } from "../utilities/articles.server";
 
 export const metadata: Metadata = {
   metadataBase: new URL(config.meta.url),
@@ -40,6 +40,10 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "black",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export default function RootLayout({

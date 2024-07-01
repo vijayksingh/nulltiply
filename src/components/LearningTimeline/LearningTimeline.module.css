@@ -1,5 +1,5 @@
 .learning-card {
-  transition: transform 0.3s ease-in-out;
+  transition: transform var(--rs-duration-medium) var(--rs-easing-standard);
 }
 
 .learning-card:hover {
@@ -10,4 +10,13 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  background-color: var(--rs-color-background-elevation-raised);
+  border-radius: var(--rs-unit-radius-medium);
+  box-shadow: var(--rs-shadow-raised);
+}
+
+@media (max-width: 659px) {
+  .learningCard {
+    max-width: 100%;
+  }
 }

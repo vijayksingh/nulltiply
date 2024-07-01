@@ -1,8 +1,8 @@
 "use client";
 
-import { View, Text, ScrollArea, Hidden } from "reshaped";
-import LayoutMenuModal from "../../components/LayoutMenuModal";
+import { Hidden, ScrollArea, Text, View } from "reshaped";
 import ArticleItem from "../../components/ArticleItem";
+import LayoutMenuModal from "../../components/LayoutMenuModal";
 import useArticleNavigation from "../../hooks/useArticleNavigation";
 import type { Props } from "./LayoutSubmenu.types";
 
@@ -26,7 +26,7 @@ const LayoutSubmenu = (props: Props) => {
       >
         {(className) => (
           <View
-            width={{ s: "100%", l: "320px", xl: "384px" }}
+            width={{ s: "100%", m: "100%", l: "320px", xl: "384px" }}
             height="100%"
             backgroundColor="elevation-base"
             className={className}

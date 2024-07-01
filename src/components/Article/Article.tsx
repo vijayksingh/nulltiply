@@ -1,15 +1,15 @@
 "use client";
 
 import NextLink from "next/link";
-import { ArrowLeft } from "react-feather";
 import React, { type ReactNode } from "react";
+import { ArrowLeft } from "react-feather";
 import {
-  Container,
-  View,
-  Text,
-  Hidden,
   ActionBar,
   Button,
+  Container,
+  Hidden,
+  Text,
+  View,
   useToggle,
 } from "reshaped";
 import LayoutMenuModal from "../../components/LayoutMenuModal";
@@ -86,8 +86,8 @@ const Article = (props: Props) => {
       <Container width="760px">
         <View
           gap={8}
-          padding={{ s: 0, l: 10 }}
-          paddingBlock={{ s: 20, l: 15 }}
+          padding={{ s: 4, m: 6, l: 10 }}
+          paddingBlock={{ s: 10, m: 15, l: 15 }}
           as="main"
         >
           {title && (

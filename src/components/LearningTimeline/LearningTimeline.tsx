@@ -113,7 +113,7 @@ const LearningTimeline: React.FC = () => {
                 <View gap={2}>
                   {group.items.map((item, itemIndex) => (
                     <View key={itemIndex} direction="row" gap={2}>
-                      <Text color="primary" weight="bold">
+                      <Text color="neutral" weight="bold">
                         {item.title}
                       </Text>
                       <Text color="neutral-faded">·</Text>
