@@ -7,7 +7,9 @@ import Article from "../../components/Article";
 import ArticleBio from "../../components/ArticleBio";
 import ArticleCode from "../../components/ArticleCode";
 import ArticleHeading from "../../components/ArticleHeading";
+import HomePage from "../App/Home/Home";
 import LearningTimeline from "../LearningTimeline/LearningTimeline";
+import RetroGrid from "../RetroGrid/RetroGrid";
 import TIL from "../TIL/TIL";
 import s from "./MdxContent.module.css";
 
@@ -15,6 +17,8 @@ const components: MDXComponents = {
   Bio: ArticleBio,
   LearningTimeline: LearningTimeline,
   TIL: TIL,
+  RetroGrid: RetroGrid,
+  Home: HomePage,
   strong: ({ children }) => {
     return (
       <Text as="b" color="neutral">

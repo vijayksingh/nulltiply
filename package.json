@@ -27,10 +27,7 @@
     "build:themes": "reshaped theming --output ./src/themes",
     "start": "next start",
     "lint": "next lint",
-    "release": "yarn publish --access public",
-    "example:dev": "yarn --cwd ./example dev",
-    "example:build": "yarn --cwd ./example build",
-    "example:start": "yarn --cwd ./example start"
+    "release": "yarn publish --access public"
   },
   "dependencies": {
     "@types/mdx": "2.0.11",

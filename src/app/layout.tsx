@@ -83,7 +83,7 @@ export default function RootLayout({
             <Hidden hide={{ s: true, l: false }}>
               {(className) => (
                 <View
-                  width={{ s: "240px", xl: "287px" }}
+                  width={{ s: "220px", xl: "220px" }}
                   height="100%"
                   backgroundColor="elevation-base"
                   className={className}

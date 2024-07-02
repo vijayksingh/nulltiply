@@ -47,6 +47,32 @@ https://til.bhupesh.me/#aws
 - add retro grid on the top of home page
 
 
+```
 
 
 
+
+
+
+// src/pages/index.tsx or src/app/page.tsx (depending on your Next.js version)
+
+import RetroGrid from '../components/RetroGrid';
+import Header from '../components/Header';
+import PostsScroller from '../components/PostsScroller';
+import Streaks from '../components/Streaks';
+import ProjectsList from '../components/ProjectsList';
+import Notes from '../components/Notes';
+
+export default function Home() {
+  return (
+    <div className="home-container">
+      <RetroGrid />
+      <Header />
+      <div className="retro-personality">8 bit retro type personality</div>
+      <PostsScroller />
+      <Streaks />
+      <ProjectsList />
+      <Notes />
+    </div>
+  );
+}

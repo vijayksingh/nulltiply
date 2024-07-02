@@ -1,0 +1,38 @@
+.container {
+  --bg-size: 300%;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    #ff00ff 0%,
+    /* Neon pink */ #00ffff 25%,
+    /* Neon cyan */ #ffff00 50%,
+    /* Neon yellow */ #ff00ff 75%,
+    /* Neon pink */ #00ffff 100% /* Neon cyan */
+  );
+  background-size: var(--bg-size) auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient 8s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: var(--bg-size) center;
+  }
+}
+
+.textShadow {
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.7),
+    0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Adjust text color for better contrast in light mode */
+[data-rs-color-mode="light"] .container {
+  mix-blend-mode: difference;
+}

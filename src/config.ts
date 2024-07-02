@@ -1,15 +1,11 @@
 import {
   Book,
-  Briefcase,
-  CheckSquare,
   Edit3,
   Feather,
   GitHub,
   Home,
   Layers,
   Linkedin,
-  Mic,
-  Package,
   Twitter,
   Youtube,
 } from "react-feather";
@@ -55,31 +51,31 @@ const config = {
       href: "/til",
     },
 
-    {
-      title: "Projects",
-      items: [
-        {
-          icon: Package,
-          title: "Reshaped",
-          href: "https://reshaped.so",
-        },
-        {
-          icon: CheckSquare,
-          title: "Design System Checklist",
-          href: "https://www.designsystemchecklist.com",
-        },
-        {
-          icon: Mic,
-          title: "Design System Interviews",
-          href: "https://reshaped.so/blog",
-        },
-        {
-          icon: Briefcase,
-          title: "Formaat Design",
-          href: "https://formaat.design",
-        },
-      ],
-    },
+    // {
+    //   title: "Projects",
+    //   items: [
+    //     {
+    //       icon: Package,
+    //       title: "Reshaped",
+    //       href: "https://reshaped.so",
+    //     },
+    //     {
+    //       icon: CheckSquare,
+    //       title: "Design System Checklist",
+    //       href: "https://www.designsystemchecklist.com",
+    //     },
+    //     {
+    //       icon: Mic,
+    //       title: "Design System Interviews",
+    //       href: "https://reshaped.so/blog",
+    //     },
+    //     {
+    //       icon: Briefcase,
+    //       title: "Formaat Design",
+    //       href: "https://formaat.design",
+    //     },
+    //   ],
+    // },
     {
       title: "Online",
       items: [
