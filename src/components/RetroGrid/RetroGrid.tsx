@@ -24,7 +24,13 @@ const RetroGrid: React.FC<RetroGridProps> = ({
         </View>
         <View className={styles.backgroundGradient} />
       </View>
-      <View position="absolute" inset={0} align="center" justify="center">
+      <View
+        paddingBottom={6}
+        position="absolute"
+        inset={0}
+        align="center"
+        justify="center"
+      >
         {children}
       </View>
     </View>
