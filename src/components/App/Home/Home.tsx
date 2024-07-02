@@ -1,4 +1,5 @@
 import { Image, Text, View } from "reshaped";
+import profile from "../../../assets/images/profile.png";
 import AnimatedGradientText from "../../AnimatedGradientText/AnimatedGradientText";
 import RetroGrid from "../../RetroGrid/RetroGrid";
 
@@ -37,9 +38,10 @@ const HomePage = () => {
           maxWidth="300px"
           align="center"
           justify="center"
+          padding={6}
         >
           <Image
-            src="https://www.taniarascia.com/ram.png"
+            src={profile.src}
             alt="Profile picture"
             width="100%"
             borderRadius="large"
