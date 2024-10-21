@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { View, ViewProps } from "reshaped";
 
-interface ScrollViewProps extends ViewProps {
+interface ScrollViewProps extends Omit<ViewProps, "direction"> {
   children: React.ReactNode;
   speed?: number;
   direction?: "horizontal" | "vertical";
@@ -47,21 +47,11 @@ const ScrollView: React.FC<ScrollViewProps> = ({
   return (
     <View
       as="div"
-      ref={scrollRef}
       overflow={isHorizontal ? "hidden" : "auto"}
       width="100%"
-      css={{
-        whiteSpace: isHorizontal ? "nowrap" : "normal",
-        overflowX: isHorizontal ? "hidden" : "auto",
-        overflowY: isHorizontal ? "hidden" : "auto",
-      }}
       {...props}
     >
-      <View
-        direction={isHorizontal ? "row" : "column"}
-        gap={4}
-        css={{ display: isHorizontal ? "inline-flex" : "flex" }}
-      >
+      <View direction={isHorizontal ? "row" : "column"} gap={4}>
         {children}
         {isHorizontal && children}{" "}
         {/* Duplicate children only for horizontal scrolling */}
