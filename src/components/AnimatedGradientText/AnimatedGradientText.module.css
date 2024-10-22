@@ -4,10 +4,10 @@
   background-image: linear-gradient(
     to right,
     #ff00ff 0%,
-    /* Neon pink */ #00ffff 25%,
-    /* Neon cyan */ #ffff00 50%,
-    /* Neon yellow */ #ff00ff 75%,
-    /* Neon pink */ #00ffff 100% /* Neon cyan */
+    #00ffff 25%,
+    #ffff00 50%,
+    #ff00ff 75%,
+    #00ffff 100%
   );
   background-size: var(--bg-size) auto;
   background-clip: text;
@@ -34,5 +34,12 @@
 
 /* Adjust text color for better contrast in light mode */
 [data-rs-color-mode="light"] .container {
-  mix-blend-mode: difference;
+  filter: brightness(0.8) contrast(1.2);
+}
+
+[data-rs-color-mode="light"] .textShadow {
+  text-shadow:
+    0 0 10px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 0, 0, 0.2),
+    0 0 30px rgba(0, 0, 0, 0.1);
 }
