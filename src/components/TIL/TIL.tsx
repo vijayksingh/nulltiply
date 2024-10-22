@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "reshaped";
+import { Hidden, Text, View } from "reshaped";
 import styles from "./TIL.module.css";
 
 type TILItem = {
@@ -76,13 +76,16 @@ const TIL: React.FC = () => {
               key={`${group.year}-${group.month}-${index}`}
               className={styles.timelineItem}
             >
-              <Text
-                variant="body-3"
-                color="neutral-faded"
-                className={styles.date}
-              >
-                {item.date.split(" ").slice(0, 2).join("\n")}
-              </Text>
+              {/* date / hide them on mobile */}
+              <Hidden hide={{ s: true, m: false, l: false }}>
+                <Text
+                  variant="body-3"
+                  color="neutral-faded"
+                  className={styles.date}
+                >
+                  {item.date.split(" ").slice(0, 2).join("\n")}
+                </Text>
+              </Hidden>
               <View className={styles.content}>
                 <Text variant="featured-3" weight="bold" color="primary">
                   {item.title}
