@@ -12,8 +12,8 @@ import {
 
 const config = {
   app: {
-    title: "Reshaped",
-    subtitle: "Blog starter kit",
+    title: "daddysgarden",
+    subtitle: "my digital garden",
     thumbnailUrl: "/img/logo.svg",
   },
   meta: {

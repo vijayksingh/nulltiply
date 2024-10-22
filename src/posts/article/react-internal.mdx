@@ -1,0 +1,100 @@
+---
+title: How React actually works?
+created: 2024-02-07
+---
+
+## Starting from React 15 : The Sychronous Giant
+The architecture of react was elegant and simple. It was divided into two main parts: 
+- Reconciler : The part responsible for diffing and finding changes. 
+- Renderer : The part responsible for applying the changed components to the DOM.
+
+Here is a quick overview of how it worked: 
+```jsx
+class Counter extends React.Component {
+  state = { count: 0 };
+
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  }
+
+  render() {
+    return <div>
+      <p>Count: {this.state.count}</p>
+      <button onClick={this.increment}>Increment</button>
+    </div>;
+  }
+}
+```
+
+When you click the button, here's what happens: 
+1. The Reconciller calls the `render` and gets a new virtual DOM. 
+2. It compares this new virtual DOM with the old one. 
+3. It identifies the changes (in this case, the updated count)
+4. It tell the renderer, "Hey, update this `<p>` tag with the new count". 
+
+This process is recursive and synchronous. It's like painting a picture but not seeing the final picture until the painting is complete.
+
+### Lets zoom in onto the Problem 
+What if the component is doing a little bit more work ? What if instead of simple counter, we're rendering a list of 10k items, each with its own state and children ? 
+
+```jsx
+class MassiveList extends React.Component {
+  state = { items: new Array(10000).fill(null).map((_, i) => ({ id: i, value: 0 })) };
+
+  incrementAll = () => {
+    this.setState(prevState => ({
+      items: prevState.items.map(item => ({ ...item, value: item.value + 1 }))
+    }));
+  };
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.incrementAll}>Increment All</button>
+        {this.state.items.map(item => (
+          <ExpensiveComponent key={item.id} value={item.value} />
+        ))}
+      </div>
+    );
+  }
+}
+```
+
+> Info: The `ExpensiveComponent` is just a placeholder for any component that does some heavy computation. In practice, it could be anything like a chart, a graph, a video, etc.
+
+In React15, when `incrementAll` is clicked, the reconciler goes through each of the 10k items, comparing, updating and passing changes to the Renderer. This process is atomic and it won't stop until it has processed all the items. 
+
+If this takes longer than 16ms (the time it takes to paint a frame on a 60fps screen), the UI will appear laggy and unresponsive.  The browser's main thread is blocked, animations stutter and user input is delayed. 
+
+### The Dream of Async Rendering
+What if, instead of repainiting the entire city in one go, we could work on one building at a time, and if something more important comes up (like a user interaction), we could pause our work, handle the urgent task, and resume where we left off ? 
+This is the dream that led to complete architectural overhaul in React 16. The introduction of Fiber laid the foundation for the async rendering model. 
+
+Here's a conceptual overview of how this might work: 
+
+```jsx
+function doWorkIfTimeRemaining(deadline) {
+  while(nextUnitOfWork && deadline.timeRemaining() > 0) {
+    nextUnitOfWork = performUnitOfWork(nextUnitOfWork);
+  }
+
+  if (nextUnitOfWork) {
+    requestIdleCallback(doWorkIfTimeRemaining);
+  } else {
+    commitAllWork();
+  }
+}
+
+requestIdleCallback(doWorkIfTimeRemaining);
+```
+
+> Note: `requestIdleCallback` (see [MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)) is a browser API that allows you to schedule tasks to run when the main thread is idle. It's like a lazy worker that helps you do things when the CPU isn't busy.
+
+In the above code, `doWorkIfTimeRemaining` is called with a deadline object. The `deadline.timeRemaining()` method returns the number of milliseconds left until the next repaint.
+
+This code, while simplified, captures of the new approach. Work is broken down into small units, performed in chunks during idle browser time, and can be interrupted if needed. 
+
+
+
+**Reconciler**
+In react, updates can be triggered through API such as `this.setState`, `this.forceUpdate` or `ReactDOM.render` function. 

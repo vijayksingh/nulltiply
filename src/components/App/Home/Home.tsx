@@ -1,7 +1,7 @@
 import { Image, Text, View } from "reshaped";
 import profile from "../../../assets/images/profile.png";
 import AnimatedGradientText from "../../AnimatedGradientText/AnimatedGradientText";
-import RetroGrid from "../../RetroGrid/RetroGrid";
+import RetroGrid from "../../ui/RetroGrid/RetroGrid";
 
 const HomePage = () => {
   return (
@@ -22,13 +22,13 @@ const HomePage = () => {
             </Text>
             <View gap={4}>
               <Text variant="body-1">
-                Hello! I'm a passionate developer with a love for creating
+                Hello! I&apos;m a passionate developer with a love for creating
                 innovative solutions. With expertise in various technologies, I
                 strive to build efficient and user-friendly applications.
               </Text>
               <Text variant="body-1">
-                My journey in tech has been exciting, and I'm always eager to
-                learn and explore new technologies.
+                My journey in tech has been exciting, and I&apos;m always eager
+                to learn and explore new technologies.
               </Text>
             </View>
           </View>

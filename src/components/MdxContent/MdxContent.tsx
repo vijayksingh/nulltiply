@@ -9,8 +9,8 @@ import ArticleCode from "../../components/ArticleCode";
 import ArticleHeading from "../../components/ArticleHeading";
 import HomePage from "../App/Home/Home";
 import LearningTimeline from "../LearningTimeline/LearningTimeline";
-import RetroGrid from "../RetroGrid/RetroGrid";
 import TIL from "../TIL/TIL";
+import RetroGrid from "../ui/RetroGrid/RetroGrid";
 import s from "./MdxContent.module.css";
 
 const components: MDXComponents = {
