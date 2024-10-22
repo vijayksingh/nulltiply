@@ -11,7 +11,7 @@
 .grid {
   animation: grid 15s linear infinite;
   background-repeat: repeat;
-  background-size: 60px 60px;
+  background-size: clamp(30px, 5vmin, 60px);
   height: 300vh;
   inset: 0% 0px;
   margin-left: -50%;

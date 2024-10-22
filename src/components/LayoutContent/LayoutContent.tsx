@@ -1,9 +1,9 @@
 "use client";
 
 import { ReactNode } from "react";
-import { View, ScrollArea, Hidden } from "reshaped";
-import type { SubmenuItemsMap } from "../../types";
+import { Hidden, ScrollArea, View } from "reshaped";
 import useArticleNavigation from "../../hooks/useArticleNavigation";
+import type { SubmenuItemsMap } from "../../types";
 
 type Props = {
   children: ReactNode;
@@ -15,7 +15,7 @@ const LayoutContent = (props: Props) => {
   const { isArticle, pathname } = useArticleNavigation(availableRoutes);
 
   return (
-    <Hidden hide={{ s: !isArticle, l: false }}>
+    <Hidden hide={{ s: false, l: false }}>
       {(className) => (
         <View grow className={className} height="100dvh">
           <ScrollArea scrollbarDisplay="hover" key={pathname}>
